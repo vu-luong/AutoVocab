@@ -3,10 +3,7 @@
 import sys
 import requests
 from lxml import etree
-from google_images_download import google_images_download   #importing the library
 from datetime import date
-
-response = google_images_download.googleimagesdownload()   #class instantiation
 
 try:
     date = sys.argv[1]
@@ -53,13 +50,6 @@ if len(definition) > 0:
                 s = s + pat + item.text.replace(word, '***') + '</div>'
     s = s + '","'
     arguments = {"keywords": word, "limit": 2}   #creating list of arguments
-#     paths = response.download(arguments)   #passing the arguments to the function
-#     print(paths)           # printing absolute paths of the downloaded images
-
-#     try:
-#         s = s + "<img src='{}'>".format(paths[0][word][0])
-#         s = s + " <img src='{}'>".format(paths[0][word][1])
-#     except:
     s = s + "(unknown)"
 
     s = s + '"\n'
