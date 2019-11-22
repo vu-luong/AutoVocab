@@ -12,7 +12,6 @@ except:
 
 print(date)
 
-
 folder = '/Users/AnhVu/Study/English/laban_api'
 with open(folder + '/daily_vocab/{}.txt'.format(date)) as f:
     content = f.readlines()
